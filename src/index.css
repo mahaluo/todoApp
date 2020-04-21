@@ -1,13 +1,40 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Material Icons"),
+       local("MaterialIcons-Regular"),
+       url(https://rawgit.com/google/material-design-icons/master/iconfont/MaterialIcons-Regular.woff2) format("woff2"),
+       url(https://rawgit.com/google/material-design-icons/master/iconfont/MaterialIcons-Regular.woff) format("woff"),
+       url(https://rawgit.com/google/material-design-icons/master/iconfont/MaterialIcons-Regular.ttf) format("truetype");
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+
+.todo-card img {
+  position: absolute;
+  top: 30%;
+  left: -30%;
+  opacity: 0.6;
+}
+
+.todo-card {
+  overflow: hidden;
+}
+
+.todo-item :hover {
+  color: #64dd17;
+}
+
+.todo-item {
+  color: #1b5e20 ;
+}
+
+.todo-button { 
+  color: #66bb6a;
+}
+
+.nav-bar {
+  background-color: #2e7d32;
+  opacity: 0.6;
 }
