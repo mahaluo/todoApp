@@ -39,7 +39,10 @@
   opacity: 0.6;
 }
 
+.side-nav {
+  max-width: 40%;
+}
 
-.outer-node {
-  margin-top: 10%;
+.side-nav-container {
+  max-width: 90%;
 }

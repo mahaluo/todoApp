@@ -19,7 +19,7 @@ class Navbar extends Component {
                 </nav>
 
                     <div className="container">
-                        <ul className="sidenav indigo center white" id="mobile-links">
+                        <ul className="sidenav indigo center white side-nav" id="mobile-links">
                             <NavLinks />
                         </ul>
                     </div>

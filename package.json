@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "cordova-android": "^8.1.0",
     "cordova-browser": "^6.0.0",
     "cordova-ios": "^5.1.1",
     "cordova-plugin-badge": "^0.8.8",
@@ -60,7 +61,8 @@
     },
     "platforms": [
       "ios",
-      "browser"
+      "browser",
+      "android"
     ]
   }
 }

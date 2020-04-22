@@ -28,7 +28,7 @@ class NavLinks extends Component {
 
     render() {
         return (
-            <div>
+            <div className="container side-nav-container">
                 <li><a href="/#" className="btn-small" id="color-button" onClick={this.changeThemeColor}><i className="material-icons">color_lens</i></a></li>
             </div>
         )
