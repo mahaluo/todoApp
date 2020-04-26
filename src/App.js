@@ -62,6 +62,24 @@ class App extends Component {
       localTodos.push(localStorage.getItem(localStorage.key(i)));
     }
 
+    const getTodos = () => {
+      if(localStorage.length === 0) {
+        return (
+          <span className="new badge red" data-badge-caption="todos">{localStorage.length.toString()}</span>
+        )
+      }
+      else if (localStorage.length === 1) {
+        return (
+          <span className="new badge" data-badge-caption="todo">{localStorage.length.toString()}</span>
+        )
+      }
+      else {
+        return (       
+          <span className="new badge" data-badge-caption="todos">{localStorage.length.toString()}</span>
+        )
+      }
+    }
+
     return (
       <div className="App">
         <div className="outer-node" ref={node => this.node = node}>
@@ -70,8 +88,15 @@ class App extends Component {
             <div className="row">
               <div className="col s12 m4 l2"></div>
               <div className="col s12 m4 l8">
-                <h5 className="brand-logo center m4"> your todo list ({localStorage.length.toString()}) </h5>
 
+                <div className="container center-align">
+                  
+                <h5 className="brand-logo"> your todo list {getTodos()} </h5>
+          
+                </div>
+               
+           
+             
                 <div className="container">
                   <div className="collection">
                   {localTodos.map((value, index) => {

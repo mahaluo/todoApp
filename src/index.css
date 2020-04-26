@@ -10,18 +10,7 @@ body {
   padding-top: env(safe-area-inset-top);
 }
 
-
-@font-face {
-  font-family: "Material Icons";
-  font-style: normal;
-  font-weight: 400;
-  src: local("Material Icons"),
-       local("MaterialIcons-Regular"),
-       url(https://rawgit.com/google/material-design-icons/master/iconfont/MaterialIcons-Regular.woff2) format("woff2"),
-       url(https://rawgit.com/google/material-design-icons/master/iconfont/MaterialIcons-Regular.woff) format("woff"),
-       url(https://rawgit.com/google/material-design-icons/master/iconfont/MaterialIcons-Regular.ttf) format("truetype");
-}
-
+@import '~material-design-icons/iconfont/material-icons.css';
 
 
 .todo-card img {
@@ -33,10 +22,6 @@ body {
 
 .todo-card {
   overflow: hidden;
-}
-
-.todo-item :hover {
-  color: #64dd17;
 }
 
 .todo-item {
