@@ -28,6 +28,9 @@
     <feature name="LocalNotification">
         <param name="ios-package" value="APPLocalNotification" />
     </feature>
+    <feature name="Notification">
+        <param name="ios-package" value="CDVNotification" />
+    </feature>
     <name>todo app</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
@@ -58,4 +61,5 @@
     <preference name="PageLength" value="0" />
     <preference name="PaginationBreakingMode" value="page" />
     <preference name="PaginationMode" value="unpaginated" />
+    <preference name="KeepRunning" value="true" />
 </widget>

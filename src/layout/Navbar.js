@@ -4,6 +4,7 @@ import NavLinks from './NavLinks'
 class Navbar extends Component {
 
     render() {
+        
           return (
             <div>
                 <nav className="nav-wrapper nav-bar" id="nav-bar">

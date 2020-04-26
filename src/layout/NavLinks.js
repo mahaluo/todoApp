@@ -23,7 +23,6 @@ class NavLinks extends Component {
         var randomColor = this.getRandomColor();
         document.getElementById('color-button').style.backgroundColor = randomColor;
         document.getElementById('nav-bar').style.backgroundColor = randomColor;
-        
     }
 
     render() {

@@ -1,3 +1,16 @@
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
+}
+
+
 @font-face {
   font-family: "Material Icons";
   font-style: normal;
@@ -44,5 +57,7 @@
 }
 
 .side-nav-container {
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
   max-width: 90%;
 }
