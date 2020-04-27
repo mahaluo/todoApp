@@ -25,23 +25,28 @@ function onDeviceReady() {
 
   //when user returns to application
   document.addEventListener('resume', onResume.bind(this), false);
-  alert('ready');
   console.log('ready happened');
   renderReactDom();
 }
 
 function onPause() {
-  alert('paused');
   console.log('paused');
 }
 
 function confirmCallback() {
-  console.log('confirmed');
+  console.log('confirmed return');
 }
 
+//this notification is not working propery, title is still localhost and button name is still ok...
 function onResume() {
-  navigator.notification.confirm('welcome back', confirmCallback, ['resumed'], ['ok'])
+  navigator.notification.alert(
+    'Welcome back!',      // message
+    confirmCallback,      // callback
+    ['Game Over'],        // title
+    ['Done']              // buttonName
+  );
 }
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
