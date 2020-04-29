@@ -20,14 +20,14 @@ class AddTodo extends Component {
         })
     }
 
-    render() {  
+    render() {
         return (
             <div className="container">
                 <form onSubmit={this.handleSubmit}>
 
                     <label><p className="center">Add new todo:</p></label>
-                    <div className="input-field offset-l5 l2 offset-m4 m4 offset-s3 s6">
-                    <input type="text" onChange={this.handleChange} value={this.state.content}/>
+                    <div className="input-field">
+                        <input type="text" onChange={this.handleChange} value={this.state.content} />
                     </div>
 
                 </form>

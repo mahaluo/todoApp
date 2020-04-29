@@ -18,6 +18,9 @@
     },
     "cordova-plugin-dialogs": {
       "PACKAGE_NAME": "com.todoApp"
+    },
+    "cordova-plugin-screen-orientation": {
+      "PACKAGE_NAME": "com.todoApp"
     }
   },
   "dependent_plugins": {
