@@ -28,7 +28,7 @@ const Todo = ({ todos, removeTodo }) => {
 
             <div className="col s12 m4 l8">
                 <div className="container center-align">
-                    <h5 className="brand-logo"> your todo list {todoList.length}</h5>
+                    <h5 className="brand-logo"> your todo list ({todoList.length})</h5> 
                 </div>
 
                 <div className="container">

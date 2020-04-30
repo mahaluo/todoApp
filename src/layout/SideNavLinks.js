@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import '../index.css'
 
-class SignedInLinks extends Component {
 
+class SideNavLinks extends Component {
 
     changeColor = () => {
         console.log('click')
@@ -35,14 +35,20 @@ class SignedInLinks extends Component {
     render() {
         return (
             <div className="container side-nav-container">
-                <ul className="right hide-on-med-and-down">
-                    <li><button className="btn-small" id="color-button" onClick={this.changeThemeColor}><i className="material-icons left">color_lens</i>colors</button></li>
-                    <li><button className="btn-small" id="logout-button" onClick={this.handleSignOut}><i className="material-icons left">exit_to_app</i>logout</button></li>
-                </ul>
+             
+                    <li>
+                    <a id="color-button" onClick={this.changeThemeColor}><i className="material-icons left">color_lens</i>colors</a>
+                    </li>
+             
+                
+                    <li>
+                    <a id="logout-button" onClick={this.handleSignOut}><i className="material-icons left">exit_to_app</i>logout</a>
+                    </li>
+             
             </div>
         )
     }
 }
 
 
-export default SignedInLinks;
+export default SideNavLinks;

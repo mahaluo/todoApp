@@ -37,9 +37,10 @@ body {
 }
 
 .side-nav {
-  max-width: 40%;
+  
 }
 
 .side-nav-container {
-  max-width: 90%;
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
 }

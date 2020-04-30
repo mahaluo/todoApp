@@ -4,12 +4,14 @@ import M from 'materialize-css';
 import './index.css';
 import Todo from './Todos/Todo';
 import SignInForm from './layout/SignInForm';
-import AddTodo from './Todos/AddTodo'
+import AddTodo from './Todos/AddTodo';
+import SignUpForm from './layout/SignUpForm';
 
 class App extends Component {
 
   state = {
     user: null,
+    newUser: null,
     todos: [],
     auth: false
   }
@@ -21,6 +23,9 @@ class App extends Component {
     //hamburgermenu dropdown settings
     let elems = document.querySelectorAll('.dropdown-trigger');
     M.Dropdown.init(elems, { inDuration: 300, outDuration: 200 });
+
+    let modalElem = document.querySelectorAll('.modal');
+    M.Modal.init(modalElem, { inDuration: 300, outDuration: 200 });
 
     this.updateTodoList();
   }
@@ -50,13 +55,46 @@ class App extends Component {
   }
 
   logIn(email, password) {
+
+    var user = JSON.parse(localStorage.getItem('currentUser'));
+
+    if (user[0].email === email && user[0].password === password) {
+      this.setState({
+        user: {
+          email,
+          password
+        },
+        auth: true
+      })
+      console.log('user logged in successfully');
+    }
+    else {
+      console.log('user tried bad login');
+      this.setState({
+        auth: false
+      })
+    }
+   
+  }
+
+  signUp(newEmail, newPassword) {
+
     this.setState({
-      user: {
-        email,
-        password
+      newUser: {
+        newEmail: newEmail,
+        newPassword: newPassword
       },
       auth: true
     })
+
+    let newUser = [
+      {
+        email: newEmail,
+        password: newPassword
+      }
+    ]
+
+    localStorage.setItem('currentUser', JSON.stringify(newUser));
   }
 
   logOut() {
@@ -123,7 +161,7 @@ class App extends Component {
       <div className="App">
         <div className="outer-node" ref={node => this.node = node}>
 
-          <Navbar auth={this.state.auth}/>
+          <Navbar auth={this.state.auth} />
 
           {
             (this.state.user) ?
@@ -132,7 +170,10 @@ class App extends Component {
                 <AddTodo addTodo={this.addTodo} />
               </div>
               :
-              <SignInForm onSignIn={this.logIn.bind(this)} />
+              <div className="container">
+                <SignInForm onSignIn={this.logIn.bind(this)} />
+                <SignUpForm onSignUp={this.signUp.bind(this)} />
+              </div>
           }
 
         </div>

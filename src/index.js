@@ -6,15 +6,18 @@ import * as serviceWorker from './serviceWorker';
 
 const renderReactDom = (todoList) => {
 
-
   ReactDOM.render(<App todoList={todoList} />, document.getElementById('root'));
 };
 
 
 if (window.cordova) {
 
-  window.addEventListener('orientationchange', function () {
-    window.location.reload();
+  window.addEventListener("orientationchange", function () {
+    var originalMarginTop = document.body.style.marginTop;
+    document.body.style.marginTop = "1px";
+    setTimeout(function () {
+      document.body.style.marginTop = originalMarginTop;
+    }, 100);
   }, false);
 
   document.addEventListener('deviceready', onDeviceReady.bind(this), false);
@@ -31,8 +34,12 @@ function onDeviceReady() {
 
   //when user returns to application
   document.addEventListener('resume', onResume.bind(this), false);
+  //when users pauses the application
   document.addEventListener('pause', onPause.bind(this), false);
+
+
   console.log('ready happened');
+
 
   renderReactDom(getTodos());
 }

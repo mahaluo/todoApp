@@ -19,27 +19,25 @@ class SignInForm extends Component {
         let email = this.state.email;
         let password = this.state.password;
         console.log('signing in user..');
+        let user = JSON.parse(localStorage.getItem('currentUser'));
 
-        if (this.state.email === "test@test.com" && this.state.password === "test") {
-            this.state.auth = true;
-            
-            console.log(this.state.auth);
+        if (user) {
             this.props.onSignIn(email, password);
         }
         else {
             this.state.auth = false;
             console.log(this.state.auth);
-            console.log('user tried bad login');
+            console.log('no registered user found');
         }
     }
-
 
     render() {
         return (
             <div className="container">
+
                 <div className="section"></div>
 
-                <h5 className="indigo-text center">Please, login into your account</h5>
+                <h5 className="center">Please, login into your account</h5>
 
                 <div className="section"></div>
 
@@ -63,7 +61,6 @@ class SignInForm extends Component {
                         </div>
 
                     </form>
-
                 </div>
             </div>
         )
